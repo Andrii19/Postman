@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "845449ab-26c9-41f2-93f7-7e2829f052fe",
+		"name": "HW2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 endpoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6fcf2c16-2833-4cae-b2d9-ee7444d46899",
+						"exec": [
+							"//Проверить, что в body приходит правильный string\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"This is the first responce from server!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5005/first",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"first"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2  endpoint",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b7dad9f9-941c-49cd-aef7-46c891989fbc",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "82e1754c-0c38-41c6-be05-426b39eabf5c",
+						"exec": [
+							"//Статус код 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//Спарсить response body в json.\r",
+							"let response = pm.response.json();\r",
+							"//Проверить, что name в ответе равно name s request (name вбить руками.)\r",
+							"let response_name = response.name;\r",
+							"console.log (response_name);\r",
+							"   //Проверить, что age в ответе равно age s request (age вбить руками.)\r",
+							"   let response_age = response.age ;\r",
+							"   console.log (response.age);\r",
+							"   //Проверить, что salary в ответе равно salary s request (salary вбить руками.)\r",
+							"   let response_salary = response.salary ;\r",
+							"   console.log (response.salary );\r",
+							"   //Спарсить request.\r",
+							"var req = request.data;\r",
+							"//Проверить, что name в ответе равно name s request (name забрать из request\r",
+							"\r",
+							"pm.test(\"name\", function () {\r",
+							"    pm.expect(response.name).to.eql(\"Andrii\");\r",
+							"});\r",
+							"\r",
+							"//Проверить, что age в ответе равно age s request (age забрать из request.)\r",
+							"pm.test(\"age\", function () {\r",
+							"    pm.expect(response.age).to.eql(\"29\");\r",
+							"});\r",
+							"\r",
+							"//Проверить, что salary в ответе равно salary s request (salary забрать из request.)\r",
+							"pm.test(\"salary\", function () {\r",
+							"    pm.expect(response.salary).to.eql(1000);\r",
+							"});\r",
+							"//Вывести в консоль параметр family из response.\r",
+							"let fam = response.family\r",
+							"console.log (fam)\r",
+							"//Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)\r",
+							"var u_salary_1_5_year = pm.response.json().family.u_salary_1_5_year;\r",
+							"console.log(\"u_salary_1_5_year = \", u_salary_1_5_year)\r",
+							"\r",
+							"pm.test(\"u_salary_1_5_year\", function(){\r",
+							"    pm.expect(u_salary_1_5_year).to.eql(response.salary*4);\r",
+							"});\r",
+							"console.log(\"u_salary_1_5_year = \", u_salary_1_5_year)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "29",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Andrii",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "1000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5005/user_info_3",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3 endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
