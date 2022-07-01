@@ -5,30 +5,30 @@ pm.test("Status code is 200", function () {
 //Спарсить response body в json.
 let response = pm.response.json();
 //Проверить, что name в ответе равно name s request (name вбить руками.)
-let response_name = response.name;
-console.log (response_name);
+let reqest_name = response.name;
+console.log (reqest_name);
   //Проверить, что age в ответе равно age s request (age вбить руками.)
- let response_age = response.age ;
-   console.log (response.age);
+ let reqest_age = response.age ;
+   console.log (reqest_age);
    //Проверить, что salary в ответе равно salary s request (salary вбить руками.)
-   let response_salary = response.salary ;
-   console.log (response.salary );
+   let reqest_salary = response.salary ;
+   console.log (reqest_salary );
    //Спарсить request.
 var req = request.data;
 //Проверить, что name в ответе равно name s request (name забрать из request
 
 pm.test("name", function () {
-    pm.expect(response.name).to.eql("Andrii");
+    pm.expect(reqest_name).to.eql("Andrii");
 });
 
 //Проверить, что age в ответе равно age s request (age забрать из request.)
 pm.test("age", function () {
-    pm.expect(response.age).to.eql("29");
+    pm.expect(reqest_age).to.eql("29");
 });
 
 //Проверить, что salary в ответе равно salary s request (salary забрать из request.)
 pm.test("salary", function () {
-    pm.expect(response.salary).to.eql(1000);
+    pm.expect(reqest_salary).to.eql(1000);
 });
 //Вывести в консоль параметр family из response.
 let fam = response.family;
