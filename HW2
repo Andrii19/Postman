@@ -3,28 +3,6 @@ http://162.55.220.72:5005/first
 2. Статус код 200
 3. Проверить, что в body приходит правильный string.
 
-{
-	"info": {
-		"_postman_id": "845449ab-26c9-41f2-93f7-7e2829f052fe",
-		"name": "HW2",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "http://162.55.220.72:5005/first",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
-		}
-	],
-	"protocolProfileBehavior": {}
-}
-
 http://162.55.220.72:5005/user_info_3
 1. Отправить запрос.
 2. Статус код 200
