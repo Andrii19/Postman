@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "f7c5a135-7199-4e0b-98d2-1b2ef61671fc",
+		"name": "Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateWithArray",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"username\": \"Misha\",\r\n    \"firstName\": \"Mihaylo\",\r\n    \"lastName\": \"Stravich\",\r\n    \"email\": \"stravich@meta.ua\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"0987778833\",\r\n    \"userStatus\": 0\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"username\": \"Masha\",\r\n    \"firstName\": \"Masha\",\r\n    \"lastName\": \"Kotous\",\r\n    \"email\": \"kot@meta.ua\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"0996677222\",\r\n    \"userStatus\": 0\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"username\": \"Lia\",\r\n    \"firstName\": \"Lia\",\r\n    \"lastName\": \"Mirivec\",\r\n    \"email\": \"mir@meta.ua\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"0952211555\",\r\n    \"userStatus\": 0\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/createWithArray",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"createWithArray"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateWithList",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"username\": \"Oleh\",\r\n    \"firstName\": \"Oleh\",\r\n    \"lastName\": \"Bidich\",\r\n    \"email\": \"bidich@meta.ua\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"0982341555\",\r\n    \"userStatus\": 0\r\n  },\r\n  {\r\n    \"id\": 0,\r\n    \"username\": \"Lilia\",\r\n    \"firstName\": \"Lilia\",\r\n    \"lastName\": \"Manivec\",\r\n    \"email\": \"manivec@meta.ua\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"0988822555\",\r\n    \"userStatus\": 0\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/createWithList",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"createWithList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by user name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/Misha?username=Misha",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Misha"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Misha"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"username\": \"Misha1\",\r\n  \"firstName\": \"Mihaylo\",\r\n    \"lastName\": \"Stravich\",\r\n    \"email\": \"stravich@meta.ua\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"0987778833\",\r\n    \"userStatus\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/Misha?username=Misha",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Misha"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Misha"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/Masha?username=Masha",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Masha"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Masha"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log user into the system",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/login?username=Oleh&password=12345678",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Oleh"
+						},
+						{
+							"key": "password",
+							"value": "12345678"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log out current in user session",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/logout",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"username\": \"Andrii\",\r\n  \"firstName\": \"Andrii\",\r\n  \"lastName\": \"Herbenko\",\r\n  \"email\": \"herbenkoandrii@gmail.com\",\r\n  \"password\": \"12345678\",\r\n  \"phone\": \"0987789248\",\r\n  \"userStatus\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
